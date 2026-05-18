@@ -1,122 +1,156 @@
-![Nexa Screenshot](./img/default1.png)
-# 💥 Megumin Suite V6 for SillyTavern
+<div align="center">
 
-**The Ultimate Automated Prompt Management, Writers' Room & Roleplay Configuration Engine.**
+<!-- Replace with your actual banner image -->
+<img src="Screenshots/banner.png" alt="Megumin Suite Banner" width="100%">
 
-Megumin Suite completely revolutionizes how you manage your preset prompts, writing styles, and AI behavior in SillyTavern. No more manually toggling prompts on and off every time you switch from a gritty dark fantasy to a lighthearted romance. The engine automatically generates optimized rules tailored to your exact preferences, applying them dynamically on a **per-character basis**.
+# 💥 Megumin Suite V7 💥
+**The Ultimate Narrative & Memory Engine for SillyTavern**
 
----
+[![SillyTavern](https://img.shields.io/badge/SillyTavern-1.12%2B-blue.svg?style=for-the-badge&logo=codeigniter)](https://github.com/SillyTavern/SillyTavern)
+[![Version](https://img.shields.io/badge/Version-V7_Beta-green.svg?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-purple.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-## 🤔 Why Do You Need Megumin Suite?
+> *"Everything your preset should have been: persistent memory, chain-of-thought reasoning, automated NPC tracking, and ComfyUI image generation in a single install."*
 
-Before Megumin Suite, changing how the AI writes — its length, its tone, the narrator's perspective — meant manually editing text boxes and swapping presets every single time. Megumin Suite automates all of that through a sleek wizard GUI.
+**Megumin Suite** is a full-stack overhaul to how SillyTavern presets work. It replaces your prompt engineering, your memory system, your NPC management, and your image pipeline — all in one extension. V7 adds advanced **Vector Memory**, automated **NPC Tracking**, and a strict **5-Phase Chain of Thought** reasoning framework.
 
-* **Global Defaults vs. Custom Profiles:** Set a "Global Default" configuration for all new chats. The moment you tweak a setting inside a specific character's chat, the ext creates an isolated **Custom Character Profile** that only affects *that* character, leaving your other roleplays untouched.
+[Features](#-core-features) • [Installation](#-installation) • [The V7 Engine](#-the-v7-narrative-engines) • [Memory Core](#-memory-core-3-tier-context) • [Image Gen](#-image-gen-kazuma)
 
----
-
-## 🌟 The V6 Flagship: The "Dream Team" Engines
-
-The headline feature of V6 is the **V6 Dream Team** preset. Instead of just giving the AI a flat list of rules, this engine forces the model to operate as a 5-person collaborative writers' room. Each "specialist" has a very specific job, ensuring unprecedented narrative consistency, psychological realism, and lore tracking.
-
-### Meet the Team:
-* 🎬 **NORA (The Director & Continuity):** Monitors rule adherence and tracks narrative consistency. She initiates and concludes every interaction with a strict quality check to ensure player autonomy isn't stolen.
-* 🧠 **ANVIL (The Psychologist):** Determines character motivations, fears, and emotional histories. He prioritizes psychological accuracy over plot convenience—meaning NPCs won't just blindly agree with you anymore.
-* 🏗️ **OPUS (The Story Architect):** Manages pacing, stakes, and narrative branches. Ensures outcomes are derived from player choices without railroading the story.
-* 🖋️ **JULIA (The Prose Stylist):** Authors all non-spoken descriptions. She utilizes an atmospheric, non-neutral voice and aggressively avoids standard AI-slop language.
-* 💬 **MIKI (The Dialogue Specialist):** Drafts NPC speech. She implements verbal tics, subtext, and era-appropriate vocabulary to reflect actual emotional states.
-
-**V6 Dream Team Lite:** A streamlined version designed for local models and smaller context windows. It compresses the workflow to roughly 700 tokens while maintaining the core narrative rules!
-
-*(Note: V5 Slice of Reality and V4 Cinematic/Dark are still fully available in the engine selection!)*
+</div>
 
 ---
 
-## 🛠️ The Dev Mode
+## 🚀 What's New in V7?
 
-Say goodbye to messy text files. Megumin Suite V6 introduces a full **Dev Mode Builder**.
-* **Create & Clone:** Build your own chronological AI logic flows from scratch, or clone an existing template (like V4 Balance or V5 Slice of Reality) to modify it.
-* **Custom Modules:** Add, edit, and rearrange custom injection blocks exactly where you want them.
-* **Import & Export:** Save your custom engines and export them as `.json` files to share with others!
+The V7 update is a ground-up rewrite featuring a  massive token savings, and advanced contextual awareness.
 
----
-
-## 🗺️ The Story Planner
-
-The new **Story Planner tab**. 
-* It analyzes your recent chat history and brainstorms a menu of 10 medium-to-long-term plot milestones (Arcs, Chapters, Episodes).
-* It automatically injects these possibilities into the AI's context (`[[storyplan]]` and `[[storytracker]]`), allowing the AI to naturally steer the story toward actual narrative goals instead of just reacting to your last message.
-* **Auto-Trigger:** Set it to run automatically every X messages, or trigger it manually!
+*    **V7 CoT Framework:** A structured 5-phase reasoning system that makes the AI build ground truth, map NPC knowledge, and self-correct before writing a single word.
+*    **Memory Core (3-Tier Context):** Automatically summarizes old messages and pushes them into a Vector Database (LanceDB). Intercepts and scrubs them from the prompt payload to save massive amounts of tokens.
+*    **Automated NPC Bank:** The AI detects new characters, writes dossiers on them, saves them, and injects them back into the prompt only when relevant. It even auto-generates ComfyUI portraits for them!
+*    **Modular Engine Toggles:** Turn off specific engine behaviors (like Cultural Anchoring or OOC protocols) without breaking the core logic.
 
 ---
 
-## 🎨 Complete Writing Style Overhaul
+## 🌟 Core Features
 
-Stage 3 has been rebuilt from the ground up into a full **Style Library**.
+###  The V7 Engines
+Choose the core ruleset that drives your world's logic and tone.
+*   **V7 Core:** Grounded, cinematic, and patient. Scales with scene density and matches prose to content. The perfect middle ground.
+*   **V7 Reality:** Full simulation mode. No plot armor. Strict physical laws. Consequences are real and persistent.
+*   **V7 Gentle:** A softer, quieter, and more atmospheric pacing. Focuses on immersion, mood, and lingering emotions.
 
-* **Filter Bar:** Easily sort through your styles using the new filters: *All, Precooked, AI Generators, and My Library*.
-* **Precooked Styles:** Instant, hardcoded narrative styles (like *Clinical & Objective* or *Sensory-Rich*) that cost zero API calls to generate. Just click and go.
-* **Dialogue / Narration Ratio Slider:** Hate reading walls of text? Use the new slider to dynamically force the AI to favor spoken dialogue (e.g., 80% Dialogue / 20% Narration) or heavy description via the `[[DNRATIO]]` macro.
+###  Memory Core (3-Tier Context)
+Never lose track of the story, and stop wasting tokens on massive context windows.
+*   **Working Memory:** The immediate chat history.
+*   **Short-Term Memory:** Background-generated AI summaries of previous chunks.
+*   **Long-Term Vault (Vector DB):** Uses **TF-IDF Keyword Matching** or **Native SillyTavern Semantic Embeddings** to silently fetch archived memories and inject them into the prompt only when relevant.
+*   **Prompt Interceptor:** Physically wipes archived messages from the prompt payload saving thousands of tokens.
 
----
+###  Automated NPC Bank
+A persistent character database that tracks every NPC accurately across sessions.
+*   **Auto-Extraction:** When a significant NPC is introduced, the AI writes a "dossier" (Name, Appearance, Inner Circle, Hidden Layers, Agenda) and saves it to the bank.
+*   **Dynamic Injection:** Scans your last 4 messages and injects relevant NPC dossiers into the prompt so the AI remembers them accurately.
+*   **AI Portrait Studio:** Click a button to have ComfyUI automatically generate a character portrait based purely on the AI's physical description of them.
 
-## 🔊 Cinematic Sounds & Animation
+###  Advanced Chain of Thought (CoT)
+Control the AI's internal reasoning process before it outputs text.
+*   **The 5-Phase Audit:** *Ground Truth ➔ Plot Engine ➔ Scene Design ➔ Active Draft ➔ Correction Loop*.
+*   **Knowledge Firewall:** Forces the AI to trace *how* an NPC knows something, preventing them from mind-reading the user's internal narration.
+*   **Gemini Thinking:** A special toggle that injects triple `<think>` tags to bypass Google's strict reasoning refusal filters.
+> ⚠️ **Note:** if you enable Gemini Thinking navigate to 'AI Response Formatting', 'Reasoning', activate 'Auto-Parse', and set the Prefix to `<think>` and Suffix to `</think>`.
 
-A brand new global setting that forces the AI to use precise **Onomatopoeia** (phonetic sound words like *click* or *thud*) instead of abstract descriptions.
-* **Animate Sounds:** For highly capable models, you can enable a sub-toggle that forces the AI to wrap these sounds in HTML/CSS animation tags (like `<fade>` or `<slide>`), bringing your chat window to life!
+###  Image Gen Kazuma (ComfyUI)
+Seamlessly wire up your local ComfyUI server to generate images while you play.
+*   **Auto-Trigger:** The AI decides when a moment is "picture-worthy" and outputs a hidden image tag, triggering ComfyUI in the background.
+*   **Overswipe Regeneration:** Simply swipe right on the last image in a gallery to instantly regenerate the prompt.
+*   **LoRA Lab & Parameters:** Full control over Steps, CFG, Denoise, and 4 LoRA slots directly inside SillyTavern.
 
----
+###  Dynamic Ban List (AI Slop Detector)
+Tired of the AI saying *"a shiver ran down your spine"* or *"testament to..."*?
+*   Click **Analyze Chat** to have the AI scan your last 50 messages and identify the top 5 repetitive crutch phrases it's using.
+*   Automatically converts them into strict negative rules and bans them from future generations.
 
-## 📊 Live Token Counter & UI Upgrades
-
-* **Modern UI:** The entire interface has been redesigned to be cleaner, faster, and perfectly responsive for both Mobile and Desktop.
-* **Live Token Breakdown:** A real-time token counter sits at the top of your window. **Hover over it** to see a detailed breakdown of exactly how many tokens your Engine Core, CoT, Writing Style, and Add-ons are consuming.
-* **Sync Tab Globally:** A new 1-click button allows you to apply the exact settings of your current tab to *every* character profile at once.
-* **Fixed Position Button:** The main extension button is now fixed and anchored safely, preventing it from getting lost or disappearing off-screen on mobile devices.
-
----
-
-## 🚫 Dynamic Ban List & Under The Hood
-
-* **Disable Utility Prefills:** A new toggle in Global Settings. Turn this ON if your API (like Claude/Anthropic) errors out during Image Gen, Banlist, or Story Planner generation. It stops the engine from forcing an 'assistant' message prefill.
-* **Garbage Collection:** The extension now automatically detects if a character has been deleted from SillyTavern and purges their ghost profile data to keep your settings file clean and fast.
-* **CoT "Off" Fix:** Turning CoT off now properly strips all `<think>` tags, preventing the AI from getting stuck in a thinking loop.
-* **Megumin Image Preset:** Added a specific preset option for manual image generation to get better, more creative ComfyUI prompt conversions.
-* Fixed GLM API errors and NanoGPT generation bugs.
-
----
-
-## 🤖 Recommended AI Models
-
-For the best experience, use models with strong instruction-following and reasoning:
-
-*  **Gemini 3.1 pro**
-*  **Claude opus 4.6**
-*  **GLM 5 and 4.7**
-*  **Kimi k2.5** (Tested lightly, performs well)
-
-*Megumin Suite is flexible, but weaker/smaller local models may struggle with the complex 5-man writers' room rules of V6. Use V6 Lite for local models!*
+###  Story Planner &  Blocks
+*   **Story Planner:** Brainstorms and tracks 10+ future plot milestones in the background.
+*   **World State Tracker:** Injects a collapsible dashboard tracking the date, weather, PC's physical state, and NPC agendas.
+*   **NPC Inner Chatter:** Forces the AI to output a hidden block of dialogue showing what the NPCs are *actually* thinking behind their masks.
 
 ---
 
-## ⚠️ Troubleshooting & Tips
+## ⚙️ Installation
 
-* **Thinking Block Won't Close:** If `<think>` tags bleed into the chat, enable the **Think Bug Toggle** in your settings.
-* **Generation Hanging / Formatting Issues:** Try **disabling "Prefill"** in the presets.
-* **Does this extension mess with my other presets?** No — your other presets will work just fine. Megumin Suite only injects its rules into its own designated preset (`Megumin Suite`). Your existing presets remain completely untouched.
+1. Open SillyTavern.
+2. Go to the **Extensions** menu (the block icon).
+3. Click **Install Extension**.
+4. Paste the repository URL:
+   ```text
+   https://github.com/Arif-salah/Megumin-Suite
+   ```
+5. Restart SillyTavern.
+6. Download the two JSON files from this repo: https://github.com/Arif-salah/Megumin-Suite/tree/main/Presets
+> ⚠️ **Note:** If you download these on your phone and your browser renames them to `.json.txt`, you **must** use a file manager to rename them and delete the `.txt` part. Furthermore, make sure the Engine file is named EXACTLY `Megumin Engine.json` before you import it. The Suite file's name doesn't matter, but the Engine must be exact.
+7. Open SillyTavern, go to the **Ai  Response configuration** tab.
+8. Click the **Import Preset** button (the little folder with an arrow) and upload the json files.
+9. Once imported, open your preset dropdown and **make sure "Megumin Suite" is the active preset.** The extension handles the Engine silently in the background.
+
+
+or just watch the **Install video:** [youtube Video](https://www.youtube.com/watch?v=Q-iaz9mBFrA) 
+
+
+> **💡 Pro Tip:** - Megumin Suite V7 DS4 is for Deepseek or GLM and Similar models.
+                      - Megumin Suite V7 Gemini is for gemini models.
+if you have model not here just try.
+
+> ⚠️ **Important:** Megumin Suite ships with several **Regex scripts** that clean and format messages before they're sent to the AI. After installing, go to the **Extensions → Regex** panel and **make sure all Megumin-related regex entries are enabled**.
+
+---
+
+## 🕹️ Quick Start Guide
+
+<div align="center">
+  <img src="Screenshots/Screenshot1.png" alt="Screenshot 1" width="200">
+  <img src="Screenshots/Screenshot2.png" alt="Screenshot 2" width="200">
+  <img src="Screenshots/Screenshot3.png" alt="Screenshot 3" width="200">
+  <img src="Screenshots/Screenshot4.png" alt="Screenshot 4" width="200">
+</div>
+
+1. **Select an Engine:** Open the Megumin Suite menu (wand icon) and pick a Core Engine (e.g., **V7 Core**).
+2. **Set your Style:** Go to the Writing Style tab. Choose a precooked style like *Sensory-Rich* or use the AI to generate a custom one.
+3. **Enable CoT:** Go to the Chain of Thought tab and select **V7 CoT** (highly recommended for complex logic).
+4. **Enable Memory Core (Optional but Recommended):** Go to Tab 10, enable the Memory Core, and click **Apply & Extract Pending**.
+5. **Chat!** The extension will handle all prompt injection, formatting, and memory management silently in the background.
+
+> **💡 Pro Tip:** If you want to see exactly what Megumin Suite is sending to the AI under the hood, enable **Prompt Payload Preview** in the Global Settings tab.
+
+---
+
+## 🛠️ Troubleshooting & Tips
+
+
+*   **LLMs:** Designed for highly capable instruction-following models (Claude 4.6 Sonnet/Opus, DeepSeek v4, Gemini 3.1 pro/flash, GLM 5.1). Smaller local models may struggle with the strict V7 CoT instructions.
+*  **Does this extension mess with my other presets?** No — your other presets will work just fine. Megumin Suite only injects its rules into its own designated preset (Megumin Suite). Your existing presets remain completely untouched.
+* **Vector Storage (Optional):** if you using Semantic Embeddings in the Memory Core, you can change the model its  Cohee/jina-embeddings-v2-base-en by default if it heavy for your pc use Xenova/all-MiniLM-L6-v2 you can change it inside  "sillytavern\config.yaml"
 * **Old Versions:** Legacy docs are here: [Megumin Suite v4 Legacy Readme](https://github.com/Arif-salah/Megumin-Suite/tree/V4.1)  [Megumin Suite v5 Legacy Readme](https://github.com/Arif-salah/Megumin-Suite/tree/V5)
 
 ---
 
-## Install & Support
+## 🤝 Credits & Acknowledgements
 
-**Install video:** [youtube Video](https://www.youtube.com/watch?v=Q-iaz9mBFrA)  
-**Discord Community:** [https://discord.gg/gnbFRu9g](https://discord.gg/HkxgN8r3jx)
+*   Built natively for the [SillyTavern](https://github.com/SillyTavern/SillyTavern).
+*   MVU Compatibility integration inspired by [KritBlade's MVU Game Maker](https://github.com/KritBlade/MVU_Game_Maker).
 
-*(If you're coming from V4 or V5, your profiles will auto-migrate gracefully. Let me know in the Discord if you run into anything weird!)*
+---
 
-If you love the extension and want to support the countless hours of development:
-* ☕ [Ko-fi (Buy me a coffee)](https://ko-fi.com/kasumaoniisan)
-* 🪙 **Crypto (LTC)**: `LSjf1DczHxs3GEbkoMmi1UWH2GikmXDtis`
+<div align="center">
 
-**Enjoy the ultimate SillyTavern roleplay experience with Megumin Suite V6.**
+### 💜 Support the Project
+
+Megumin Suite is free and always will be. If it saved you hours of prompt engineering or made your sessions better, consider tossing a few bucks it keeps development alive and the updates coming.
+
+[![Ko-fi](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Ko--fi-ff5e5b?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/kasumaoniisan)
+
+🪙 **Crypto (LTC):** `LSjf1DczHxs3GEbkoMmi1UWH2GikmXDtis`
+
+⭐ *Not in a position to donate? Starring the repo and sharing it helps just as much.*
+
+</div>
