@@ -144,8 +144,6 @@ if you have model not here just try.
 
 Megumin Suite is free and always will be. If it saved you hours of prompt engineering or made your sessions better, consider tossing a few bucks it keeps development alive and the updates coming.
 
-[![Ko-fi](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Ko--fi-ff5e5b?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/kasumaoniisan)
-
 🪙 **Crypto (LTC):** `LSjf1DczHxs3GEbkoMmi1UWH2GikmXDtis`
 
 ⭐ *Not in a position to donate? Starring the repo and sharing it helps just as much.*
