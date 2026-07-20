@@ -1,112 +1,169 @@
 <div align="center">
 
-<!-- Replace with your actual banner image -->
 <img src="Screenshots/banner.png" alt="Megumin Suite Banner" width="100%">
 
 [![SillyTavern](https://img.shields.io/badge/SillyTavern-1.12%2B-blue.svg?style=for-the-badge&logo=codeigniter)](https://github.com/SillyTavern/SillyTavern)
-[![Version](https://img.shields.io/badge/Version-V8-green.svg?style=for-the-badge)](#)
+[![Version](https://img.shields.io/badge/Version-V9-green.svg?style=for-the-badge)](#)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-purple.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 > *"Everything your preset should have been: persistent memory, chain-of-thought reasoning, automated NPC tracking, and ComfyUI image generation in a single install."*
 
-**Megumin Suite** is a full-stack overhaul to how SillyTavern presets work. It replaces your preset, your memory system, your NPC management, and your image Generation — all in one extension. V8 introduces the new **Obsidian**, **Spark**, and **Fusion** engines with unprecedented dialogue realism, a completely redesigned **NPC Dossier** template, **Inline Image Generation**, and fully editable prompts across every subsystem.
+**Megumin Suite** is a full-stack overhaul to how SillyTavern presets work. It replaces your preset, your memory system, your NPC management, and your image generation — all in one extension. V9 introduces the new **Mirage**, **Xin**, **Kuromaku**, and **Cui** presets — a complete generational leap in narrative quality, psychology, and world simulation.
 
-[Features](#-core-features) • [Installation](#%EF%B8%8F-installation) • [The V8 Engines](#the-v8-engines) • [Memory Core](#-memory-core-3-tier-context) • [Image Gen](#image-gen-kazuma-comfyui)
+[Features](#-core-features) • [Installation](#%EF%B8%8F-installation) • [The V9 Presets](#the-v9-presets) • [Memory Core](#-memory-core-3-tier-context) • [Image Gen](#image-gen-kazuma-comfyui)
 
 </div>
 
 ---
 
-## 🚀 What's New in V8?
+## What's New in V9?
 
-V8 marks a huge step forward in terms of story quality, NPC depth, and user controls.
+V9 marks the ultimate generation of Megumin Suite. Each preset was thoroughly redesigned with a single aim — making the AI stop being your Simp. V9 makes world push back. NPC is not a satellite orbiting around you anymore — it's a person with a name, a life, a job, a wound, and an agenda, that has absolutely nothing to do with you. The side character you met for a minute at a gas station has a surname and a purpose to be there. The story does not cater to your comfort — it is honest and sometimes that honesty is not convenient. Roleplay that reads like a real story, not like a wish-fulfillment machine.
 
-*   **V8 Obsidian Engine:** A complete rewrite that's all about obsession with psychology, dialogue, and story arcs. Has a strict hierarchy of priorities, story and sub-story arcs, and some of the most stringent dialogue rules against AI slop in the preset family.
-*   **V8 Spark Engine:** A much lighter version of the Obsidian engine that retains all the same rules about psychology, dialogue, and story momentum without the high token costs.
-*   **V8 Fusion Engine:** The best of both worlds – a mix of the deep psychology rules in V8 Obsidian and the V6 Dream Team framework, which involves having six specialized writer roles (NORA, ANVIL, OPUS, JULIA, MIKI).
-*   **V7.5 Kismet Engine (Bonus):** Initially planned for its own V7.5 release, the Kismet engine was instead integrated into V8. This engine is all about the story.
-*   **Redesigned NPC Dossier Template:** This is a completely revamped NPC Dossier that contains many new categories, including **Role**, **Where to find them**, **Voice** (the way they speak), **Image Tags** (for ComfyUI's Booru tags), **Read on the PC**, **Tiered Secrets** (semi-public → private → hidden), **Canon Lock** (immutably true facts about the character), and **Orientation**. The template also comes with trigger criteria to ensure that the AI will not create a dossier unless absolutely necessary.
-*   **Inline Image Generation:** Images are generated directly inline with the AI's response instead of posting them separately as part of a gallery. Includes individual retry buttons for each image.
-*   **Fully Editable Prompts:** All subsystems (Story Planner, Ban List, Image Gen, Memory Core, NPC Bank) now have an "Advanced: Edit Prompts" panel in which users can edit all the templates for prompts sent to the AI. The edits are enabled/disabled via a toggle and are saved individually per profile.
-*   **Image Gen Overhaul:** Instead of using style and perspective dropdowns, there's now a **Prompt Template** system (six preset options: Illustrious/Z Image × POV/Cinematic/Portrait). There are additional toggles for **Include Examples**, **Better Booru Tags** (direct NSFW language), **Inject NPC Tags** (inject the saved NPC image tags into the prompts), and multiple images per response (one to four).
-*   **Auto-CoT Matching:** Using a CoT framework other than V9 and selecting V7, V7.5, V8, or V8Fusion will automatically update your chosen framework accordingly.
-*   **NPC/OOC Keyword Trigger:** Avoid using unnecessary tokens by only injecting a new NPC dossier template if your input contains either of the key phrases "NPC" or "dossier". (Example: "Create an NPC dossier for the bartender")
-*   **"Scan Story" Button for NPC Bank:** You can manually scan your story and extract all your significant NPCs in one go — there's no need for the AI to do so in real time while chatting.
-*   **Customizable Chunk Size for Memory Core:** Customize how many messages are processed per chunk (between 10 and 40).
-*   **Draggable Button:** The wand button in the Megumin suite can be easily dragged and positioned to any location on the page, with persistent positions after session restarts.
-*   **Live Token Counter Accuracy:** The Token Counter now calculates tokens at a `4.8` chars/token ratio (matching modern efficient tokenizers like Claude/GPT-4). It also now intelligently ignores highly variable dynamic blocks (like Memory Vaults and NPC lists) to give you a stable, accurate "Base Payload" estimation.
-*   **New Writing Style Interface Design:** Updated the old stacked menu design to a more intuitive sidebar-based navigation panel, containing Precooked, My Library, and AI generators. Also removed the need for separate pages for DN Ratio & POV selectors.
-*   **Min/Max Words Toggle:** Switch between specifying either minimum or maximum target word count for writing prompts.
-*   **Optimizations:** Memory Core uses cached Set lookups to determine if a message is archived in O(1), paginates accordion/vaults (only loading 20 items at a time with a "load more" option), debounce visual updates, and caches token counts.
+### The V9 Preset Family
+Four completely new presets, each with its unique features:
+
+*   **V9 Mirage** ⭐ *Recommended* — The gold standard. Realistic character psychology, vivid atmospheric grounding, and consequences of the world. The one you should use if your model can handle it.
+*   **V9 Xin** — An experimental preset with an alternative style of storytelling. It has its own writing style. **Note:** Does not support custom Writing Styles.
+*   **V9 Kuromaku** — An unusual preset that combines the mechanisms of specialized writers room (V8 Fusion — NORA, ANVIL, OPUS, JULIA, MIKI) with the raw psychology of V9. Highly experimental. **Note:** Does not support custom Writing Styles.
+*   **V9 Cui** — Light version of Mirage. Keeps the philosophy and brutal realism, but works with less context.
+
+### V9 Dynamic Render Limits
+There is no longer one fixed "Target Word Count" slider in V9 presets. Instead, there are two sliders, which are controlled **dynamically**:
+
+*   **Lean Render** (by default: 300–400 words): For short dialogues and well-known locations.
+*   **Full Render** (by default: 700–1200 words): For new scenes, new characters, deep moments, important events in the story.
+*   **Smart Scaling**: The AI decides on its own if the current scene requires a Lean or Full render and adjusts the word limits according to your settings.
+
+### Story Director (Completely Rebuilt)
+Story Planner got a complete makeover and turned into a **Story Director**:
+
+*   **Director's Console UI:** A whole new interface with Content Rating (No Limit / SFW / NSFW), Pacing Control (Slow Burn / Natural / Accelerate), Primary Genre selection, and up to 3 Flavor Tags (Rivals to Lovers, Dark Comedy, Heist, etc.)
+*   **Director's Note:** A special input field to give precise direction to the AI — the AI will organically integrate your directive into story's fabric.
+*   **Unrestricted Content Toggle:** A special override switch to bypass AI's safety filters for darker narrative directions.
+*   **"Evolve" Button:** Makes the current story directive evolve according to the recent developments.
+*   **Context Awareness:** The Director scans both User and AI messages and analyzes either last 100 messages (fast and cheap) or the full chat history (thanks to EugeoSynthesisThirtyTwo)
+*   **Story Evolution Triggers:** Three modes of controlling story development:
+   *   **Manual Only** — disables all automatic evolution. The AI monitors story progress in the background, but evolves it only after you click the Evolve button yourself. Full control.
+   *   **Auto (Smart Status)** — the AI generates a status tag (progressing | nearing_climax | completed | pivoted) with each reply. As soon as it decides that the current beat is over, the extension triggers a new arc of the story. Organically paced story.
+   *   **Every X Replies (Safety Net)** — the same as above, but with a fallback. In case the AI gets stuck and doesn't evolve on its own after X replies, the extension forces it forward so that your story never gets stuck in an endless loop.
+
+### V9 Native Writing Styles
+Two native writing styles (`V9 Default` and `V9 Lite Default`) allowing the AI to bleed the perspective character's voice into the text — the narration's mood, lexicon, and rhythm change depending on whose perspective the AI is taking.
+
+### New V9 Chain of Thought Frameworks
+Five completely new reasoning frameworks for V9 presets. Each one is tied to a preset and matches automatically when you choose the V9 preset.
+
+### Image Generation Upgrades
+*   **Positive Prefix Box:** Insert global tags (such as `score_9`, `masterpiece`) at the beginning of your prompt before ComfyUI takes over.
+*   **Smart LoRA Trigger Words:** Trigger words memorization for each of the 4 LoRA slots — selecting a LoRA will populate its trigger words.
+*   **Random Seed Button:** A dice symbol near the Seed input that sets it to -1 (random).
+
+### NPCs Bank Improvements
+*   **Ignore List:** Names that you don't want the AI to extract or create dossiers of.
+*   **Max Injection Limit:** A slider that caps the number of NPCs that the extension will inject at once (by default: 3) to avoid bloating the context in busy scenes.
+*   **Custom Injection Thresholds & Dynamic Blacklisting.**
+
+### Side Panel
+*   The Side Panel collects all of your active trackers — World State, NPC presence, story progress — and displays them in a neat sidebar panel next to your actual chat to keep it uncluttered. 
+
+### Per-Chat Settings & Smart Branching
+Your settings are now saved **per-chat**, not per-character — so the conversation with the same character can have completely different configuration. And if you travel back in your chat history, regenerate a message, or branch off to some point in the past, the extension cleans itself up automatically:
+*   **Memory Pruning:** Future summaries that didn't happen yet will be cleared.
+*   **NPC Cleanup:** The characters introduced in the future timeline will be removed from the NPC Bank.
+*   **Story Director Reset:** Traveling to the past before creating a story plan will reset the director's settings to make it create a new one.
+*   **Branch Inheritance:** New branch inherits all the settings from the parent chat automatically.
+
+### UI
+*   **Mobile Drawer System:** A hamburger menu and a sliding drawer for mobile users.
+*   **Global Settings Menu:** Prompt Payload Preview and Disable Utility Prefills moved to a dedicated gear icon in the top action bar.
+*   **Precooked Styles Edit:** You can edit the precooked styles now.
+*   **Compact World State:** Compact Mode will make the AI generate only a micro-dash of lore (Time, Location, Clothes, Posture) with every reply, except once in X.
+*   **Export/Import** for NPC Bank and Memory Core.
+
+### Under the Hood
+*   **Future Data Pruning:** Traveling back in the chat will prune future data from Memory Core, NPC Bank, and Story Director.
+*   **TF-IDF Caching:** The keywords are calculated once per turn and reused in Memory Vault, NPC Bank, and Image Generator — huge performance boost.
+*   **O(K×V) Vector Math Optimization:** Document frequency calculations done in a single pass instead of nested loops.
+*   **Direct-to-Vault Bypass:** Old messages that were not summarized will bypass the AI summary step and save straight to Vault — saving thousands of tokens.
+*   **Memory Core Optimization:** 100 times faster than previous generations. Will save inside chat file now instead of `settings.json` (fixes lag on weaker hardware).
 
 ---
 
 ## 🌟 Core Features
 
-### The V8 Engines
-The V8 series constitutes the pinnacle of narrative engines in the Suite's history.
+### The V9 Presets
+The V9 preset family represents the peak of the narrative presets' development in the history of Megumin Suite. Each preset was redesigned from the ground up with the philosophy of brutal realism, advanced character psychology, and a world that does not revolve around the player.
 
-*   **V8 Obsidian:** The king. No other narrative engine excels at portraying complex human psychology, realistic flawed dialogues, and multi-layered autonomous story plot generation. Equipped with an official 7-rule priority hierarchy, structured storyline (Main Arc + 3 Subplots + Micro-Tensions), foreshadowing methodology, causality and consequences, agenda-as-plot-motor of NPCs, and by far the most aggressive anti-slop dialogue.
-*   **V8 Spark:** All of the above rules condensed into a compact set of instructions taking up less tokens than the Obsidian version. For use on light models that find the Obsidian engine too cumbersome.
-*   **V8 Fusion:** Combines the best from V8 Obsidian (psychology, dialogue engine) with the V6 Dream Team approach of a 6-specialist writer room (NORA, ANVIL, OPUS, JULIA, MIKI). Each of the 6 specialists is responsible for a particular type of writing: NORA ensures continuity, ANVIL handles psychology, OPUS constructs the plot, JULIA writes the narration, and MIKI creates dialogues.
+*   **V9 Mirage** ⭐ — The gold standard. Provides realistic character psychology, dynamic scene modes (Storytelling, Tension, Harsh Reality, Intimacy, Mundane, Comedy, NSFW), the narrator that lives inside the characters, and the rules of world-building that value specificity over vagueness. Every NPC has a life, a history, a wound, and an agenda. The world says no when it should.
+*   **V9 Xin** — A stylistic alternative preset with its own style of voice and rhythm. For those who want something else. Covers all of the above in a different storytelling style.
+*   **V9 Kuromaku** — A hybrid writer-room preset. Six specialists (NORA, ANVIL, OPUS, JULIA, MIKI) each do their job — continuity, psychology, plot architecture, prose, and dialogue — with the V9 philosophy driving the creative process. Has a built-in Story Engine with arc structures, event generation, foreshadowing, and NPC agendas as plot fuel.
+*   **V9 Cui** — A light version of Mirage. Same philosophy, same scene modes, same narrator philosophy — but works with less context.
 
-> 📝 **Note:** V8 engines lock the Persona & Toggles tab automatically. This is because V8 engines utilize their native persona and narrative settings system, which conflicts with any external injection.
+> 📝 **Note:** V9 Xin and V9 Kuromaku come with their own writing styles and **do not support** custom Writing Styles. V9 Mirage and V9 Cui support all Writing Styles.
+
+> 📝 **Note:** V8 presets (Obsidian, Spark, Fusion) are still available in the extension for those who prefer them. V9 is just the new generation of presets.
 
 ### Automated NPC Bank
 A persistent character database that tracks every NPC accurately across sessions.
 *   **Auto-Extraction:** When a significant NPC is introduced, the AI writes a detailed dossier and saves it to the bank.
-*   **Redesigned Dossier Template:** The V8 dossier is dramatically more detailed than V7. NPCs now include **Role**, **Where to Find Them**, **Voice** (how they speak), **Image Tags** (Booru tags for ComfyUI), **Read on the PC** (what the NPC currently thinks of the player), **Tiered Secrets** (semi-public → private → buried), and **Canon Lock** (immutable facts that can never change). The template also includes strict trigger conditions — dossiers are only generated for characters who are **Named**, **Voiced** (more than a transactional line), and **Staked** (have a want or role that affects the story). No more dossiers for cashiers and bartenders.
-*   **Dynamic Injection:** Scans your last 4 messages and injects relevant NPC dossiers into the prompt so the AI remembers them accurately.
-*   **Image Tags Only Mode:** Per-NPC toggle to hide the text dossier from the AI (saving tokens) while still making their Booru image tags available to ComfyUI.
-*   **OOC Trigger:** Save tokens by only injecting the blank dossier template when you mention "NPC" or "dossier" in your message.
+*   **Detailed Dossier Template:** NPCs include **Role**, **Where to Find Them**, **Voice** (how they speak), **Image Tags** (Booru tags for ComfyUI), **Read on the PC** (what the NPC thinks of the player), **Tiered Secrets** (semi-public → private → buried), and **Canon Lock** (immutable facts). Strict trigger conditions ensure dossiers are only generated for characters who are Named, Voiced, and Staked.
+*   **Dynamic Injection:** Scans your last 4 messages and injects relevant NPC dossiers into the prompt.
+*   **Ignore List & Max Injection Limit:** Blacklist names and cap injected NPCs to prevent bloat.
+*   **Image Tags Only Mode:** Per-NPC toggle to hide the text dossier (saving tokens) while keeping Booru tags available for ComfyUI.
+*   **OOC Trigger:** Only injects the blank dossier template when you mention "NPC" or "dossier" in your message.
 *   **Scan Story:** Manually scan your entire chat history and extract all significant NPCs at once.
-*   **AI Portrait Studio:** Click a button to have ComfyUI automatically generate a character portrait based purely on the AI's physical description of them.
+*   **AI Portrait Studio:** Have ComfyUI auto-generate a character portrait based on the AI's physical description.
+*   **Export/Import:** Transfer your NPC data between chats.
 
 ### Advanced Chain of Thought (CoT)
-Manually control the AI’s internal thought process prior to text generation.
+Manually control the AI's internal reasoning before text generation.
 *   **Master Toggle:** Enable/Disable CoT.
-*   **Auto-matching:** The selection of any V7/V7.5/V8 will automatically set your CoT to the correct version.
-*   **The 5-Phase Audit (V7):** *Ground Truth -> Plot Engine -> Scene Design -> Active Draft -> Correction Loop*.
-*   **V8 CoT:** A streamlined 7-step thinking process (INPUT -> STORY -> NPCs -> DRAFT DIALOGUE -> DIALOGUE KILL CHAIN -> NARRATION -> FINAL).
-*   **V8 Fusion CoT:** Brief thinking prompts specific to the writer room framework.
-*   **V7.5 Kismet CoT:** Story Engine-based thoughts that include vocabulary gate checks & arc phase.
+*   **Auto-matching:** Selecting any V9 preset automatically sets your CoT to the matching V9 framework.
+*   **5 New V9 CoT Frameworks:** Purpose-built reasoning chains for each V9 preset (Core, Lite, Director, Immersion, and a Hybrid variant).
+*   **Legacy CoT:** V7, V7.5, V8, and V8 Fusion CoT frameworks are still available.
 
 ### Image Gen Kazuma (ComfyUI)
-Hook up your own personal ComfyUI instance to your bot to create images on the fly during roleplay.
-*   **Inline Mode:** Images are displayed directly in text with individual image-specific retries in the AI text reply.
-*   **Gallery Mode:** Images appear as individual galleries (the default way).
-*   **Prompt Templates:** Includes 6 templates (Illustrious/Z Image × POV/Cinematic/Portrait), complete with full rules and example images.
-*   **Multi-Image Creation:** Create from 1-4 images in one AI reply.
-*   **Inject NPC Tags:** Save and automatically insert NPC Booru image tags into prompts when relevant NPCs are involved.
-*   **Improved Booru Tags:** Ensures that the AI uses specific and unembellished Danbooru tags with all applicable NSFW tags.
-*   **LoRA Lab & Parameters:** Fine-tune Steps, CFG, Denoise, and 4 LoRA slots in SillyTavern.
+Hook up your own ComfyUI instance to generate images on the fly during roleplay.
+*   **Inline Mode:** Images displayed directly in text with individual retry buttons.
+*   **Gallery Mode:** Images appear as individual galleries (the default).
+*   **Prompt Templates:** 6 templates (Illustrious/Z Image × POV/Cinematic/Portrait) with full rules and examples.
+*   **Positive Prefix Box:** Insert global tags at the start of every prompt.
+*   **Smart LoRA Trigger Words:** Saved trigger words auto-populate when you select a LoRA.
+*   **Multi-Image Creation:** 1–4 images per AI reply.
+*   **Inject NPC Tags:** Auto-insert saved NPC Booru tags when relevant NPCs are in the scene.
+*   **LoRA Lab & Parameters:** Fine-tune Steps, CFG, Denoise, and 4 LoRA slots.
+
+> 📖 **New to ComfyUI?** Follow this step-by-step setup guide: [How to Setup Inline Image Generation in Megumin Suite](https://www.reddit.com/r/SillyTavernAI/comments/1u87agq/tutorial_how_to_setup_inline_image_generation_in/)
 
 ### Dynamic Ban List (AI Slop Detector)
-Fed up with the AI repeating phrases like *"a shiver ran down your spine"* and *"testament to..."*?
-*   Select **Analyze Chat** and let the AI analyze your last 50 messages, finding the 5 most common crutch phrases that you use.
-*   Turns them into hard bans automatically, preventing the AI from ever using them again in the future.
-*   **Import/Export** ban list as JSON to transfer it between profiles.
+Fed up with the AI repeating the same tired phrases?
+*   **Analyze Chat:** Let the AI scan your last 50 messages and find the most common crutch phrases.
+*   Turns them into hard bans automatically.
+*   **Import/Export** ban list as JSON.
 
-### Story Planner & Blocks
-*   **Story Planner:** Generates ideas for future plot twists, following at least 10 upcoming milestones.
-*   **World State Tracker:** Inserts a dynamic collapsible panel displaying the world state including the date, weather, PC's current condition, NPC goals, planted seeds, consequences countdowns, and story progression phases.
-*   **NPC Inner Chatter:** Makes the AI generate an invisible block of conversation revealing the thoughts of your NPCs.
+### Story Director
+*   **Director's Console:** Full UI with Content Rating, Pacing, Genre, Flavor Tags, Director's Notes, and Unrestricted Content toggle.
+*   **Auto-Evolution:** The AI secretly evaluates story progress and evolves the plot forward when the current beat concludes naturally.
+*   **Evolve Button:** Manually evolve the current story directive based on recent events.
+*   **Context Awareness:** Reads both User and AI messages with configurable analysis depth (Last 100 Messages or Full Chat History).
+*   **World State Tracker:** Dynamic collapsible panel with Compact Mode option — full lore block every X replies, 30-token Micro-Dash the rest of the time.
 
 ### Memory Core (3-Tier Context)
-Keep track of the story and stop burning tokens on bloated context windows.
+Keep track of the story without burning tokens on bloated context windows.
 *   **Working Memory:** The most recent conversation logs.
-*   **Short-Term Memory:** Automatically generated summaries by the background service of previous chunks.
-*   **Long-Term Vault (Vector DB):** Applies either **TF-IDF Keyword Matching** or **SillyTavern's Semantic Embeddings** to retrieve relevant archived memories and feed them back into the prompt without you knowing.
-*   **Prompt Interceptor:** Automatically strips out any archived messages from the prompt and saves thousands of tokens.
-*   **Configurable Chunk Size:** Control how many messages to sumarize at once ranging from 10 to 40 messages.
-*   **"Every Reply" Auto-Trigger:** You can enable memory retrieval to happen each time the AI replies automatically.
-
-> 📝 **Note:** Memory Core is **not** for advanced users. This is an easy way for users with up to 1000 message conversations to save their context space without managing any manual summaries.
+*   **Short-Term Memory:** Auto-generated summaries of previous message chunks.
+*   **Long-Term Vault (Vector DB):** Uses **TF-IDF Keyword Matching** or **SillyTavern's Semantic Embeddings** to retrieve relevant archived memories.
+*   **Prompt Interceptor:** Automatically strips archived messages from the prompt, saving thousands of tokens.
+*   **Configurable Chunk Size:** 10–40 messages per chunk.
+*   **"Every Reply" Auto-Trigger:** Enable automatic memory retrieval on each AI reply.
+*   **Export/Import:** Transfer memory data between chats.
+*   **100x Faster:** Completely rewritten for performance. Saves inside chat files instead of `settings.json`.
 
 ### Fully Editable Prompts
-Every subsystem now includes an **"Advanced: Edit Prompts"** collapsible panel:
-*   Customize the system prompt, user task prompt, thinking instructions, and injection templates for **Story Planner**, **Ban List**, **Image Generation**, **Memory Core**, and **NPC Bank**.
-*   Each editor has an enable/disable toggle — disabled means the default prompts are used.
+Every subsystem includes an **"Advanced: Edit Prompts"** panel:
+*   Customize system prompts, user task prompts, thinking instructions, and injection templates for **Story Director**, **Ban List**, **Image Generation**, **Memory Core**, and **NPC Bank**.
+*   Each editor has an enable/disable toggle — disabled means defaults are used.
 *   Custom prompts are saved per-character/per-group profile.
 
 ---
@@ -121,20 +178,15 @@ Every subsystem now includes an **"Advanced: Edit Prompts"** collapsible panel:
    https://github.com/Arif-salah/Megumin-Suite
    ```
 5. Refresh SillyTavern.
-6. Download the JSONs files from this repo: https://github.com/Arif-salah/Megumin-Suite/tree/main/Presets
+6. Download the JSON files from this repo: https://github.com/Arif-salah/Megumin-Suite/tree/main/Presets
 > ⚠️ **Note:** If you download these on your phone and your browser renames them to `.json.txt`, you **must** use a file manager to rename them and delete the `.txt` part. Furthermore, make sure the Engine file is named EXACTLY `Megumin Engine.json` before you import it. The Suite file's name doesn't matter, but the Engine must be exact.
-7. Open SillyTavern, go to the **Ai  Response configuration** tab.
-8. Click the **Import Preset** button (the little folder with an arrow) and upload the json files.
+7. Open SillyTavern, go to the **AI Response Configuration** tab.
+8. Click the **Import Preset** button (the little folder with an arrow) and upload the JSON files.
 9. Once imported, open your preset dropdown and **make sure "Megumin Suite" is the active preset.** The extension handles the Engine silently in the background.
 
+Or just watch the **Install video:** [YouTube Video](https://www.youtube.com/watch?v=Q-iaz9mBFrA)
 
-or just watch the **Install video:** [youtube Video](https://www.youtube.com/watch?v=Q-iaz9mBFrA) 
-
-
-> **💡 Pro Tip:** - Megumin Suite V8 DS4 is for Deepseek.
-                      - Megumin Suite V8 Gemini is for gemini models.
-                      - Megumin Suite V8 Claude+GLM you know for what.
-if you have model not here just try.
+> **💡 Pro Tip:** V9 ships with a **universal preset** that works across all major models — Claude, Gemini, DeepSeek, GLM, Gemma you name it. Just use the default one and you're good to go. There is a separate **V9 Gemini** preset available, but it's only recommended if you're running into specific issues with Gemini. The universal preset is still the recommended choice even for Gemini.
 
 > ⚠️ **Important:** Megumin Suite ships with several **Regex scripts** that clean and format messages before they're sent to the AI. After installing, go to the **Extensions → Regex** panel and **make sure all Megumin-related regex entries are enabled**.
 
@@ -149,29 +201,44 @@ if you have model not here just try.
   <img src="Screenshots/Screenshot4.png" alt="Screenshot 4" width="200">
 </div>
 
-1. **Select an Engine:** Open the Megumin Suite menu (wand icon) and pick a Core Engine. **V8 Obsidian** or **V8 Fusion** are recommended for the best experience.
-2. **Set your Style:** Go to the Writing Style tab. The V8 Default style (witty, opinionated observer) is applied automatically. Customize it or choose from precooked styles.
-3. **Enable CoT:** Go to the Chain of Thought tab — it's enabled by default and auto-matches your engine version.
-4. **Chat!** The extension will handle all prompt injection, formatting, and memory management silently in the background.
+1. **Pick a Preset:** Open the Megumin Suite menu (wand icon) and choose a preset. **V9 Mirage** is the recommended choice for the best experience.
+2. **Set your Style:** Go to the Writing Style tab. V9 Default is applied automatically for Mirage and Cui. Customize it or pick from precooked styles.
+3. **Enable CoT:** Go to the Chain of Thought tab — it's enabled by default and auto-matches your preset.
+4. **Chat!** The extension handles all prompt injection, formatting, and memory management silently in the background.
 
-> **💡 Pro Tip:** If you want to see exactly what Megumin Suite is sending to the AI under the hood, enable **Prompt Payload Preview** in the Global Settings tab.
+> **💡 Pro Tip:** If you want to see exactly what Megumin Suite is sending to the AI under the hood, enable **Prompt Payload Preview** in the Global Settings menu (gear icon in the top action bar).
 
 ---
 
 ## 🛠️ Troubleshooting & Tips
 
-
-*   **LLMs:** Designed for highly capable instruction-following models (Claude 4.6 Sonnet/Opus, DeepSeek v4, Gemini 3.1 pro/flash, GLM 5.1). Smaller local models may struggle with the strict V8 CoT instructions. use v8 spark for small LLMs.
-*  **Does this extension mess with my other presets?** No — your other presets will work just fine. Megumin Suite only injects its rules into its own designated preset (Megumin Suite). Your existing presets remain completely untouched.
-* **Vector Storage (Optional):** if you using Semantic Embeddings in the Memory Core, you can change the model its  Cohee/jina-embeddings-v2-base-en by default if it heavy for your pc use Xenova/all-MiniLM-L6-v2 you can change it inside  "sillytavern\config.yaml"
-* **Old Versions:** Legacy docs are here: [Megumin Suite v4 Legacy Readme](https://github.com/Arif-salah/Megumin-Suite/tree/V4.1)  [Megumin Suite v5 Legacy Readme](https://github.com/Arif-salah/Megumin-Suite/tree/V5) [Megumin Suite v6 Legacy Readme](https://github.com/Arif-salah/Megumin-Suite/tree/V6) [Megumin Suite v7 Legacy Readme](https://github.com/Arif-salah/Megumin-Suite/tree/V7)
+*   **Does this extension mess with my other presets?** No — your other presets work just fine. Megumin Suite only injects its rules into its own designated preset. Your existing presets remain completely untouched.
+*   **Vector Storage (Optional):** If you're using Semantic Embeddings in the Memory Core, you can change the model — it's `Cohee/jina-embeddings-v2-base-en` by default. If that's too heavy for your PC, use `Xenova/all-MiniLM-L6-v2`. Change it inside `sillytavern/config.yaml`.
+*   **Old Versions:** Legacy docs are available here: [V4](https://github.com/Arif-salah/Megumin-Suite/tree/V4.1) • [V5](https://github.com/Arif-salah/Megumin-Suite/tree/V5) • [V6](https://github.com/Arif-salah/Megumin-Suite/tree/V6) • [V7](https://github.com/Arif-salah/Megumin-Suite/tree/V7)
 
 ---
 
 ## 🤝 Credits & Acknowledgements
 
-*   Built natively for the [SillyTavern](https://github.com/SillyTavern/SillyTavern).
+*   Built natively for [SillyTavern](https://github.com/SillyTavern/SillyTavern).
 *   MVU Compatibility integration inspired by [KritBlade's MVU Game Maker](https://github.com/KritBlade/MVU_Game_Maker).
+*   Side Panel implementation thanks to **Luka**.
+
+---
+
+## 💜 Donators — Thank You!
+
+Megumin Suite is free and always will be. These amazing people chose to support the project and help keep it going. Every bit of support genuinely means the world — thank you. 🙏
+
+| | Name |
+|---|---|
+| 🛡️ | **ILLOGICAL** |
+| 🛡️ | **Antivash** |
+| 🛡️ | **KritBlade** |
+| 🛡️ | **Luka** |
+| 🛡️ | **Rokubi No Kitsune** |
+
+Every dollar helps keep updates coming and the coffee flowing. You all are legends.
 
 ---
 
@@ -179,8 +246,9 @@ if you have model not here just try.
 
 ### 💜 Support the Project
 
-Megumin Suite is free and always will be. If it saved you hours of prompt engineering or made your sessions better, consider tossing a few bucks it keeps development alive and the updates coming.
+Megumin Suite is free and always will be. If it saved you hours of prompt engineering or made your sessions better, consider tossing a few bucks — it keeps development alive and the updates coming.
 
+💳 **PayPal:** `arifsalah10@gmail.com`
 🪙 **Crypto (LTC):** `LSjf1DczHxs3GEbkoMmi1UWH2GikmXDtis`
 
 ⭐ *Not in a position to donate? Starring the repo and sharing it helps just as much.*
