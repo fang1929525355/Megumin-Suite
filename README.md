@@ -251,6 +251,8 @@ Megumin Suite is free and always will be. If it saved you hours of prompt engine
 💳 **PayPal:** `arifsalah10@gmail.com`
 🪙 **Crypto (LTC):** `LSjf1DczHxs3GEbkoMmi1UWH2GikmXDtis`
 
+**Quick note**: In case you donate money and you are in the **Discord server** then please put **your Discord username** in the PayPal notes to get the **Donator role**. With this role, you will have **access to beta builds before they become publicly available**. Other people will be able to test betas too but number of slots is limited. Donators always will get slots first without any questions.
+
 ⭐ *Not in a position to donate? Starring the repo and sharing it helps just as much.*
 
 </div>
