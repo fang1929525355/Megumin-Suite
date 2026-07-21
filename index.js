@@ -317,7 +317,6 @@ function initProfile() {
             lastTrackerState: "",
             planMessageIndex: null,
             contextLimit: 100,
-            v9_reset_done: true
         },
         imageGen: {
             enabled: false,
@@ -8263,37 +8262,9 @@ function initDraggableButton() {
 function cleanLegacySettings() {
     if (!extension_settings[extensionName] || !extension_settings[extensionName].profiles) return;
     let didClean = false;
-    
     Object.keys(extension_settings[extensionName].profiles).forEach(key => {
+        if (key === 'default') return; // Do not touch global defaults
         const prof = extension_settings[extensionName].profiles[key];
-        
-        // --- NEW: V9 Story Planner Hard Reset ---
-        // If they don't have the V9 flag, wipe their Story Planner clean to apply the new defaults
-        if (prof.storyPlan && prof.storyPlan.v9_reset_done !== true) {
-            prof.storyPlan = {
-                enabled: false,
-                backend: "direct",
-                triggerMode: "auto",
-                autoFreq: 10,
-                currentPlan: "",
-                customPrompts: null,
-                customPromptsEnabled: false,
-                contentRating: "none",
-                pacing: "natural",
-                primaryGenre: "drama",
-                flavorTags: [],
-                directorsNote: "",
-                unrestrictedContent: false,
-                lastTrackerState: "",
-                planMessageIndex: null,
-                contextLimit: 100,
-                v9_reset_done: true
-            };
-            didClean = true;
-        }
-
-        if (key === 'default') return; // Do not touch global defaults for the memory wipes below
-        
         if (prof.memoryCore && (prof.memoryCore.shortTermChunks?.length > 0 || prof.memoryCore.longTermVault?.length > 0)) {
             delete prof.memoryCore.shortTermChunks;
             delete prof.memoryCore.longTermVault;
@@ -8305,7 +8276,6 @@ function cleanLegacySettings() {
             didClean = true;
         }
     });
-    
     if (didClean) saveSettingsDebounced();
 }
 
